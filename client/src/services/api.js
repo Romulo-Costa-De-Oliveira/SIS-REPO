@@ -4,9 +4,9 @@ export const api = axios.create({
   baseURL: "http://localhost:5000",
 });
 
-export const createSession= async(email, password)=>{
-  return api.post("/sessions", {email, password})
-}
+export const createSession = async (email, password) => {
+  return api.post("/sessions", { email, password });
+};
 
 export const getRepositories = async (userId, query) => {
   let url = `/user/${userId}/repository`;
@@ -46,4 +46,8 @@ const getRepositoryName = (url) => {
 
     return `${values[1]}/${values[2]}`;
   }
+};
+
+export const createUser = async (email, password) => {
+  return api.post("/user", { email, password });
 };
